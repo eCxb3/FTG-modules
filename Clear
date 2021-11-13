@@ -4,7 +4,7 @@ from time import sleep
 from userbot.events import register
 @register(outgoing=True, pattern="^.clrm(.*)")
 async def Clear(message):
-    await message.delete
+    await message.delete()
     mess = str(message.pattern_match.group(1))
     await message.respond(mess)
     sleep(0.4)
