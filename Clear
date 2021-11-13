@@ -2,7 +2,7 @@ import asyncio
 import time
 from time import sleep
 from userbot.events import register
-@register(outgoing=True, pattern="^.clrm(.*)")
+@register(outgoing=True, pattern="^.clrm (.*)")
 async def Clear(message):
     await message.delete()
     mess = str(message.pattern_match.group(1))
