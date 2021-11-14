@@ -8,4 +8,5 @@ async def Clear(message):
     mess = str(message.pattern_match.group(1))
     mess_send = await message.respond(mess)
     sleep(0.4)
-    await mess_send.edit("ㅤ")
+    await mess_send.delete()
+    await message.respond("ㅤ")
