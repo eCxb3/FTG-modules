@@ -1,0 +1,26 @@
+from .. import loader, utils
+import io
+import os
+from time import sleep
+
+def register(cb):
+	cb(Printer())
+  
+class Printer(loader.Module):
+	strings = {'name': 'eCxb3'}
+  def __init__(self):
+		self.name = self.strings['name']
+		self._me = None
+		self._ratelimit = []
+	async def client_ready(self, client, db):
+		self._db = db
+		self._client = client
+		self.me = await client.get_me()
+  async def prntt(self, message):
+		repeat = 0
+		min_num = 0
+    max_num = 0
+    repeat = int(utils.get_args_raw(message).split(" ")[0])
+		text = message.text.replace(".rand "+str(repeat), "")
+    print(repeat)
+    print(text)
