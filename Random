@@ -3,9 +3,11 @@ import time
 import random
 from time import sleep
 from userbot.events import register
-@register(outgoing=True, pattern="^.rand (.*) (.*)")
+@register(outgoing=True, pattern="^.rand (.*) (.*) (.*)")
 async def Rand(num):
   num1 = num.pattern_match.group(1)
   num2 = num.pattern_match.group(2)
-  print(num1, num2)
+  num3 = num.pattern_match.group(3)
+  print(num1, num2, num3)
+  print(type(num1), type(num2), type(num3))
     
