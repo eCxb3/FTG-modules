@@ -8,8 +8,8 @@ async def Rand(num):
   num1 = num.pattern_match.group(1)
   num2 = num.pattern_match.group(2)
   num3 = num.pattern_match.group(3)
-  print(num1, num2, num3)
+  await num.respond(num1, num2, num3)
   print(type(num1), type(num2), type(num3))
   for _ in range(int(num3)):
-    print random.randint(int(num1), int(num2))
+    await num.respond(random.randint(int(num1), int(num2)))
     
