@@ -1,6 +1,6 @@
 import asyncio
 import time
-import random
+import random2
 from time import sleep
 from userbot.events import register
 @register(outgoing=True, pattern="^.rand (.*) (.*) (.*)")
@@ -10,4 +10,6 @@ async def Rand(num):
   num3 = num.pattern_match.group(3)
   print(num1, num2, num3)
   print(type(num1), type(num2), type(num3))
+  for _ in range(int(num3)):
+    print random.randint(int(num1), int(num2))
     
