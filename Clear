@@ -7,7 +7,7 @@ async def Clear(message):
     await message.delete()
     mess = str(message.pattern_match.group(1))
     print("mess = ( " + mess + " )")
-    if mess == "":
+    if mess == " ":
         await message.respond("ㅤ")
         return
     else:
