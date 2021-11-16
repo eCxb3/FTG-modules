@@ -10,7 +10,7 @@ class Printer(loader.Module):
 	"""Выдать рандомное число."""
   	strings = {'name': 'eCxb3'}
   
-  	async def prntt(self, message):
+  	async def Random(self, message):
     		"""Используй .rnd <начало(сек)-конец(сек)>."""
     		arg = utils.get_args_raw(message).split('-')
     		await message.edit(arg)
