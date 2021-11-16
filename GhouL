@@ -6,7 +6,7 @@ from userbot.events import register
 
 async def Gul(mess):
 	await mess.edit("Я гуль")
-    	sleep(2)
+	sleep(2)
 	a = 1000
 	while c > 0:
 		c = a - 7
@@ -17,11 +17,11 @@ async def Gul(mess):
 @register(outgoing=True, pattern="^.gulmm(.*)")
 
 async def ed(e):
-    await e.edit("Я гуль")
-    sleep(2)
-    a = 1000
-    while c > 0:
-        c = a - 7
+	await e.edit("Я гуль")
+	sleep(2)
+	a = 1000
+	while c > 0:
+		c = a - 7
 		await e.respond(str(a), "-7", str(c))
 		a = c
 	await mess.respond("l l let me die")
