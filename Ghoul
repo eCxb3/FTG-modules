@@ -37,7 +37,7 @@ async def gulmmd(me):
 	while a > 0:
 		c = a - 7
 		d = await me.respond(str(a) + " - 7 = " + str(c))
+		sleep(0.4)
 		await d.delete()
 		a = c
-		sleep(0.1)
 	await me.respond("l l let me die")
