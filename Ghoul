@@ -10,8 +10,9 @@ async def Gul(mess):
 	a = 1000
 	while a > 0:
 		c = a - 7
-		await mess.edit(str(a) + " -7 " + str(c))
+		await mess.edit(str(a) + " - 7 = " + str(c))
 		a = c
+		sleep(0.1)
 	await mess.edit("l l let me die")
 
 @register(outgoing=True, pattern="^.gulmm(.*)")
@@ -22,6 +23,7 @@ async def ed(e):
 	a = 1000
 	while a > 0:
 		c = a - 7
-		await e.respond(str(a) + " -7 " + str(c))
+		await e.respond(str(a) + " - 7 = " + str(c))
 		a = c
-	await mess.respond("l l let me die")
+		sleep(0.1)
+	await e.respond("l l let me die")
