@@ -7,9 +7,10 @@ def register(cb):
 	cb(Printer())
   
 class Printer(loader.Module):
-  strings = {'name': 'eCxb3'}
+	"""Выдать рандомное число."""
+  	strings = {'name': 'eCxb3'}
   
-  async def prntt(self, message):
-    """Используй .rnd <начало(сек)-конец(сек)>."""
-    arg = utils.get_args_raw(event).split('-')
-    await message.edit(arg)
+  	async def prntt(self, message):
+    		"""Используй .rnd <начало(сек)-конец(сек)>."""
+    		arg = utils.get_args_raw(event).split('-')
+    		await message.edit(arg)
