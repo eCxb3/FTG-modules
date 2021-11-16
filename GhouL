@@ -4,7 +4,7 @@ from time import sleep
 from userbot.events import register
 @register(outgoing=True, pattern="^.gulom(.*)")
 
-async def Gul(mess):
+async def gulom(mess):
 	await mess.edit("Я гуль")
 	sleep(2)
 	a = 1000
@@ -17,7 +17,7 @@ async def Gul(mess):
 
 @register(outgoing=True, pattern="^.gulmm(.*)")
 
-async def ed(e):
+async def gulmm(e):
 	await e.edit("Я гуль")
 	sleep(2)
 	a = 1000
@@ -27,3 +27,17 @@ async def ed(e):
 		a = c
 		sleep(0.1)
 	await e.respond("l l let me die")
+
+@register(outgoing=True, pattern="^.gulmmd(.*)")
+
+async def gulmmd(me):
+	await me.edit("Я гуль")
+	sleep(2)
+	a = 1000
+	while a > 0:
+		c = a - 7
+		del = await me.respond(str(a) + " - 7 = " + str(c))
+		del.delete()
+		a = c
+		sleep(0.1)
+	await me.respond("l l let me die")
