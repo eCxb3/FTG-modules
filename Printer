@@ -12,5 +12,5 @@ class Printer(loader.Module):
   
   	async def prntt(self, message):
     		"""Используй .rnd <начало(сек)-конец(сек)>."""
-    		arg = utils.get_args_raw(event).split('-')
+    		arg = utils.get_args_raw(message).split('-')
     		await message.edit(arg)
