@@ -6,7 +6,6 @@ from userbot.events import register
 async def Clear(message):
     await message.delete()
     mess = str(message.pattern_match.group(1))
-    print("\n\n\n\n\n\n\n\n" + "mess=(" + mess + ")" + "\n\n\n\n\n\n\n\n\n\n\n")
     if not mess:
         await message.respond("ᅠ")
     else:
