@@ -6,13 +6,10 @@ from userbot.events import register
 async def Clear(message):
     await message.delete()
     mess = str(message.pattern_match.group(1))
-    print("mess = ( " + mess + " )")
-    if mess == " ":
-        await message.respond("ㅤ")
-        return
+    if mess == "":
+        await message.respond("ᅠ")
     else:
         mess_send = await message.respond(mess)
         sleep(0.5)
         await mess_send.delete()
         await message.respond("ㅤ")
-        return
