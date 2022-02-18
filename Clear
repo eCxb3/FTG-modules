@@ -1,16 +1,17 @@
 import asyncio
 import time
+import io, requests
 from .. import loader, utils
 from time import sleep
 from userbot.events import register
 @register(outgoing=True, pattern="^.clrm (.*)")
-async def Clear(message, text):
+async def Clear(self, message):
     await message.delete()
-    mess = utils.get_args_raw(text)
+    mess = utils.get_args_raw(message)
     if not mess:
-        await message.respond("ᅠ")
+        await self.respond("ᅠ")
     else:
-        mess_send = await message.respond(mess)
+        mess_send = await self.respond(mess)
         sleep(0.5)
         await mess_send.delete()
-        await message.respond("ㅤ")
+        await self.respond("ㅤ")
