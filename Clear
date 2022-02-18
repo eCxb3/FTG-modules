@@ -7,7 +7,7 @@ from userbot.events import register
 @register(outgoing=True, pattern="^.clrm (.*)")
 async def Clear(self, message):
     await message.delete()
-    mess = utils.get_args_raw(message)
+    mess = str(self.pattern_match.group(1))
     if not mess:
         await self.respond("ᅠ")
     else:
