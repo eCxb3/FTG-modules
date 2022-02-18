@@ -11,5 +11,6 @@ async def Rand(num):
   await num.respond(num1, num2, num3)
   print(type(num1), type(num2), type(num3))
   for _ in range(int(num3)):
+    await print(random.randint(int(num1), int(num2)))
     await num.respond(random.randint(int(num1), int(num2)))
     
