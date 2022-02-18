@@ -8,7 +8,7 @@ async def Clear(self):
        
 @register(outgoing=True, pattern="^.clrmt (.*)")
 async def ClearTEXT(self):
-    mess = str(message.pattern_match.group(1))
+    mess = str(self.pattern_match.group(1))
     mess_send = await self.edit(mess)
     sleep(0.5)
     await mess_send.delete()
