@@ -1,5 +1,6 @@
 import asyncio
 import time
+from .. import loader, utils
 from time import sleep
 from userbot.events import register
 @register(outgoing=True, pattern="^.clrm (.*)")
