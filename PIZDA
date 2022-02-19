@@ -9,7 +9,7 @@ def pizda(am):
 
 @register(outgoing=True, pattern="^.vam-pizda(.*)")
 
-async def start(e):
+async def start():
   for _ in range(5):
     haha = threading.Thread(target=pizda)
     haha.start()
