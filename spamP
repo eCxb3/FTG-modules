@@ -2,7 +2,7 @@ import threading
 import asyncio
 from userbot.events import register
 
-def pizda(am):
+async def pizda(am):
   count = int(am.pattern_match.group(1))
   for _ in range(count):
     await am.respond("😈")
