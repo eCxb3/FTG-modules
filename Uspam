@@ -3,7 +3,7 @@ import time
 from time import sleep
 from userbot.events import register
 
-@register(outgoing=True, pattern="^.uspam (.*), (.*), (.*)")
+@register(outgoing=True, pattern="^.uspam (.*),, (.*),, (.*)")
 
 async def USpam(get):
     count = get.pattern_match.group(1)
@@ -15,7 +15,7 @@ async def USpam(get):
     for _ in range(int(count)):
         await get.respond(text)
 
-@register(outgoing=True, pattern="^.uspamdelay (.*), (.*), (.*), (.*)")
+@register(outgoing=True, pattern="^.uspamdelay (.*),, (.*),, (.*),, (.*)")
 
 async def USpamDelay(give):
     count = int(give.pattern_match.group(1))
