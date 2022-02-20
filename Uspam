@@ -1,0 +1,29 @@
+import asyncio
+import time
+from time import sleep
+from userbot.events import register
+
+@register(outgoing=True, pattern="^.uspam (.*), (.*), (.*)")
+
+async def USpam(get):
+    count = get.pattern_match.group(1)
+    title = str(get.pattern_match.group(2))
+    text = str(get.pattern_match.group(3))
+    
+    await get.edit(title)
+    sleep(2)
+    for _ in range(int(count)):
+        await get.respond(text)
+
+@register(outgoing=True, pattern="^.uspamdelay (.*), (.*), (.*), (.*)")
+
+async def USpamDelay(give):
+    count = int(give.pattern_match.group(1))
+    delay = int(give.pattern_match.group(2))
+    title = str(give.pattern_match.group(3))
+    text = str(give.pattern_match.group(4))
+    
+    await give.edit(title)
+    sleep(delay)
+    for _ in range(count):
+        await give.respond(text)
