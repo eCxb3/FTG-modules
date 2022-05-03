@@ -1,0 +1,22 @@
+from asyncio import sleep
+
+from pyrogram import Client, types
+from .. import loader, utils
+
+@loader.module(name="Ghoul", author="ecXbe")
+class GhoulMod(loader.Module):
+
+    """Я гуль"""
+    
+    async def gulom_cmd(self, app: Client, message: types.Message)
+    
+      """Гуль одним сообщеением"""
+      
+      await utils.answer(message, 'Я гуль')
+      a = 1000
+      while a > 0:
+        c = a - 7
+        await utils.answer(message, '1000 - 7 = ' + c)
+        a = c
+        await sleep(0.1)
+      await utils.answer(message, 'l l let me die')
