@@ -8,7 +8,7 @@ class GhoulMod(loader.Module):
 
     """Я гуль"""
     
-    async def gulom_cmd(self, app: Client, message, types.Message)
+    async def gulom_cmd(self, app: Client, message: types.Message)
     
       """Гуль одним сообщеением"""
       
