@@ -16,7 +16,7 @@ class GhoulMod(loader.Module):
       a = 1000
       while a > 0:
         c = a - 7
-        await utils.answer(message, '1000 - 7 = ' + c)
+        await utils.answer(message, str(a) + " - 7 = " + str(c))
         a = c
         await sleep(0.1)
       await utils.answer(message, 'l l let me die')
