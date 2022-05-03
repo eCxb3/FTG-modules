@@ -19,5 +19,5 @@ class GhoulMod(loader.Module):
         await utils.answer(message, '1000 - 7 = ' + c)
         a = c
         await sleep(0.1)
-      await utils.answer(message, 'l l let me die'
+      await utils.answer(message, 'l l let me die')
         
