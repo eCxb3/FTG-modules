@@ -3,12 +3,12 @@ from asyncio import sleep
 from pyrogram import Client, types
 from .. import loader, utils
 
-@loader.module(name="Ghoul", author="ecXbe", version=1)
+@loader.module(name="Ghoul", author="ecXbe")
 class GhoulMod(loader.Module):
 
     """Я гуль"""
     
-    async def gulom_cmd(self, app: Client, message: types.Message)
+    async def gulom_cmd(self, app: Client, message: types.Message):
     
       """Гуль одним сообщеением"""
       
