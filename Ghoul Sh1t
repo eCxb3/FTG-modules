@@ -8,7 +8,7 @@ class GhoulMod(loader.Module):
 
     """Я гуль"""
     
-    async def gulom_cmd(self, app: Client, message: types.Message):
+    async def ghoulom_cmd(self, app: Client, message: types.Message):
     
       """Гуль одним сообщеением"""
       
@@ -20,3 +20,16 @@ class GhoulMod(loader.Module):
         a = c
         await sleep(0.1)
       await utils.answer(message, 'l l let me die')
+      
+    async def ghoulmm_cmd(self, app: Client, message: types.Message):
+        
+        """Я гуль множеством сообщений"""
+        
+        await utils.answer(message, 'Я гуль')
+        a = 1000
+        while a > 0:
+            c = a - 7
+            await utils.respond(message, str(a) + " - 7 = " + str(c))
+            a = c
+            await sleep(0.1)
+        await utils.respond(message, 'l l let me die')
