@@ -25,7 +25,7 @@ class GhoulMod(loader.Module):
         
         """Я гуль множеством сообщений"""
         
-        await utils.answer(message 'Я гуль')
+        await utils.answer(message, 'Я гуль')
         a = 1000
         await app.send_message("me", "Message sent with **Pyrogram**!")
         """
