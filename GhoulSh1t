@@ -27,9 +27,12 @@ class GhoulMod(loader.Module):
         
         await utils.answer(message, 'Я гуль')
         a = 1000
+        await app.send_message("me", "Message sent with **Pyrogram**!")
+        """
         while a > 0:
             c = a - 7
             await message.client.send_message(message.to_id, str(a) + " - 7 = " + str(c))
             a = c
             await sleep(0.1)
         await message.client.send_message(message.to_id, 'l l let me die')
+        """
