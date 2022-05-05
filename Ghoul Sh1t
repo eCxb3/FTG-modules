@@ -13,6 +13,7 @@ class GhoulMod(loader.Module):
       """Гуль одним сообщеением"""
       
       await utils.answer(message, 'Я гуль')
+      await sleep(2)
       a = 1000
       while a > 0:
         c = a - 7
@@ -26,13 +27,24 @@ class GhoulMod(loader.Module):
         """Я гуль множеством сообщений"""
         
         await utils.answer(message, 'Я гуль')
+        await sleep(2)
         a = 1000
-        await app.send_message(message.chat.id, "Message sent with **Pyrogram**!")
-        """
         while a > 0:
             c = a - 7
-            await message.client.send_message(message.to_id, str(a) + " - 7 = " + str(c))
+            await app.send_message(message.chat.id, str(a) + " - 7 = " + str(c))
             a = c
             await sleep(0.1)
-        await message.client.send_message(message.to_id, 'l l let me die')
-        """
+        await app.send_message(message.chat.id, 'l l let me die')
+        
+    async def ghoulmmd_cmd(self, app: Client, message: types.Message):
+        
+        """Я гуль множеством сообщений, сразу удаляемые"""
+        
+        await utils.answer(message, 'Я гуль')
+        while a > 0:
+            c = a - 7
+            d = await app.send_message(message.chat.id, str(a) + " - 7 = " + str(c))
+            a = c
+            await sleep(0.4)
+            await d.delete()
+        await app.send_message(message.chat.id, 'l l let me die')
