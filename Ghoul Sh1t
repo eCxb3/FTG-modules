@@ -38,7 +38,7 @@ class GhoulMod(loader.Module):
         
     async def ghoulmmd_cmd(self, app: Client, message: types.Message):
         
-        """Я гуль множеством сообщений, сразу удаляемые"""
+        """Я гуль множеством сразу удаляемыемых сообщений"""
         
         await utils.answer(message, 'Я гуль')
         sleep(2)
