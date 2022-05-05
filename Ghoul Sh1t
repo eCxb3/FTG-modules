@@ -22,7 +22,7 @@ class GhoulMod(loader.Module):
         await sleep(0.1)
       await utils.answer(message, 'l l let me die')
       
-    async def ghoulmm_cmd(self, app: Client, message: Message):
+    async def ghoulmm_cmd(self, app: Client, message: types.Message):
         
         """Я гуль множеством сообщений"""
         
