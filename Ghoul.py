@@ -24,7 +24,7 @@ class GhoulMod(loader.module):
 		
 		ghoul = 1000
 		while ghoul > 0:
-			await client.send_message(message.chat.id, f''{ghoul} - 7 = {ghoul - 7})
+			await client.send_message(message.chat.id, f'{ghoul} - 7 = {ghoul - 7}')
 			ghoul -= 7
 			await sleep(0.1)
 		return await client.send_message(message.chat.id, f'l l let me die')
