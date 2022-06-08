@@ -11,6 +11,10 @@ class GhoulMod(loader.Module):
         	"name": "Ghoul"
 	}
 	
+	async def client_ready(self, client, db):
+        	self._db = db
+        	self._client = client
+	
 	async def ghoulomcmd(self, message: Message):
 		
 		"""Гуль одним сообщением"""
