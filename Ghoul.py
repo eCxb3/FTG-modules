@@ -7,7 +7,14 @@ class GhoulMod(loader.Module):
 	
 	"""Я гуль"""
 	
-	async def ghoulom_cmd(self, message: Message):
+	strings = {
+        	"name": "Ghoul"
+	}
+	
+	async def ghoulomcmd(self, message: Message):
+		
+		"""Гуль одним сообщением"""
+		
 		await message.edit('Я гуль')
 		await sleep(2)
 		
@@ -18,7 +25,10 @@ class GhoulMod(loader.Module):
 			await sleep(0.1)
 		return await message.edit(f'l l let me die')
 	
-	async def ghoulmm_cmd(self, message: Message):
+	async def ghoulmmcmd(self, message: Message):
+		
+		"""Гуль множеством сообщений"""
+		
 		await message.edit('Я гуль')
 		await sleep(2)
 		
@@ -29,7 +39,10 @@ class GhoulMod(loader.Module):
 			await sleep(0.1)
 		return await client.send_message(message.chat.id, f'l l let me die')
 	
-	async def ghoulmmd_cmd(self, message: Message):
+	async def ghoulmmdcmd(self, message: Message):
+		
+		"""Гуль множеством сразу удаляемыемых сообщений"""
+		
 		await message.edit('Я гуль')
 		await sleep(2)
 		
