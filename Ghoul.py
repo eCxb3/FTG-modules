@@ -39,4 +39,4 @@ class GhoulMod(loader.module):
 			ghoul -= 7
 			await sleep(0.4)
 			await d.delete()
-		return await client.send_message(message.chat.id, 'l l let me die')
+		return await client.send_message(message.chat.id, f'l l let me die')
