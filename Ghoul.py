@@ -19,7 +19,7 @@ class GhoulMod(loader.Module):
 		
 		"""Гуль одним сообщением"""
 		
-		await message.edit('Я гуль')
+		await utils.answer(message, 'Я гуль')
 		await sleep(2)
 		
 		ghoul = 1000
@@ -27,13 +27,13 @@ class GhoulMod(loader.Module):
 			await message.edit(f'{ghoul} - 7 = {ghoul - 7}')
 			ghoul -= 7
 			await sleep(0.1)
-		return await message.edit(f'l l let me die')
+		return await utils.answer(message, f'l l let me die')
 	
 	async def ghoulmmcmd(self, message: Message):
 		
 		"""Гуль множеством сообщений"""
 		
-		await message.edit('Я гуль')
+		await utils.answer(message, 'Я гуль')
 		await sleep(2)
 		
 		ghoul = 1000
@@ -47,7 +47,7 @@ class GhoulMod(loader.Module):
 		
 		"""Гуль множеством сразу удаляемыемых сообщений"""
 		
-		await message.edit('Я гуль')
+		await utils.answer(message, 'Я гуль')
 		await sleep(2)
 		
 		ghoul = 1000
