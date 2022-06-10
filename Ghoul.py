@@ -1,6 +1,6 @@
 from asyncio import sleep
 from .. import loader, utils
-from pyrogram.types import Message
+from telethon.tl.types import Message
 
 @loader.tds
 class GhoulMod(loader.Module):
@@ -8,10 +8,6 @@ class GhoulMod(loader.Module):
 	strings = {
         	"name": "Ghoul"
 	}
-	
-	async def client_ready(self, client, db):
-        	self._db = db
-        	self._client = client
 	
 	async def ghoulomcmd(self, message: Message):	
 		"""Гуль одним сообщением"""
