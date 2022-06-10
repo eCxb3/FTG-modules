@@ -3,7 +3,7 @@ from .. import loader, utils
 from pyrogram.types import Message
 
 @loader.tds
-class GhoulMod(loader.Module)
+class GhoulMod(loader.Module):
 	"""Я гуль"""
 	strings = {
         	"name": "Ghoul"
