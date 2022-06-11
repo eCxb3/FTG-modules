@@ -36,7 +36,6 @@ class MusicSendMod(loader.Module):
         await self._client.send_file(
             message.peer_id,
             r.document,
-            caption=f"🎧 {utils.ascii_face()}",
             reply_to=getattr(message, "reply_to_msg_id", None),
         )
         await r.delete()
