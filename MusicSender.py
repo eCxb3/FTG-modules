@@ -10,8 +10,8 @@ class MusicSendMod(loader.Module):
   
   async def client_ready(self, client, db):
     self._db = db
-      self._client = client
-      await utils.dnd(client, "@audio_storm_bot", archive=True)
+    self._client = client
+    await utils.dnd(client, "@audio_storm_bot", archive=True)
   
   async def msendcmd(self, message: Message):
     
