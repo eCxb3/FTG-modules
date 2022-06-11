@@ -5,7 +5,7 @@ from telethon.tl.types import Message
 
 @loader.tds
 class MusicSendMod(loader.Module):
-  
+  """Отправляет песню"""
   strings = {"name": "MusicSender"}
   
   async def client_ready(self, client, db):
@@ -14,7 +14,7 @@ class MusicSendMod(loader.Module):
     await utils.dnd(client, "@audio_storm_bot", archive=True)
   
   async def msendcmd(self, message: Message):
-    
+    """Отправить песнб по названию. Использование msend <название песни>"""
     args = utils.get_args_raw(message)
     if not args:
       return await message.edit('❌ Нет аргумента')
@@ -22,6 +22,7 @@ class MusicSendMod(loader.Module):
     async with self._client.conversation("@audio_storm_bot") as conv:
       try:
         m = await conv.send_message(args)
+        r = await conv.get_response()
         r = await conv.get_response()
         await m.delete()
 
