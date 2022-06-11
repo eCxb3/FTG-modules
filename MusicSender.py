@@ -18,7 +18,9 @@ class MusicSendMod(loader.Module):
     args = utils.get_args_raw(message)
     if not args:
       return await message.edit('❌ Нет аргумента')
-    
+    local = message.chat.id
+
+
     async with self._client.conversation("@audio_storm_bot") as conv:
       await message.edit('🔍 Loading..')
       try:
@@ -37,11 +39,7 @@ class MusicSendMod(loader.Module):
 
         assert r.document
 
-        await self._client.send_file(
-            message.peer_id,
-            r.document,
-            reply_to=getattr(message, "reply_to_msg_id", None),
-        )
+        await self._client.send_file(local, r.document)
         await message.delete()
       except Exception:
         await message.edit(f'❌ Песня: «{args}» не найдена')
