@@ -44,6 +44,6 @@ class MusicSendMod(loader.Module):
         )
         await message.delete()
       except Exception:
-        await client.send_message(message.chat.id, f'❌ Песня: «{args}» не найдена')
+        await message.edit(f'❌ Песня: «{args}» не найдена')
 
       await self._client.delete_dialog("@audio_storm_bot")
