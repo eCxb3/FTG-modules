@@ -23,10 +23,14 @@ class MusicSendMod(loader.Module):
       try:
         m = await conv.send_message(args)
         r = await conv.get_response()
-        r = await conv.get_response()
         await m.delete()
-
-        assert "Извините, по данному запросу не найдено аудиозаписей" not in r.raw_text
+        
+        mm = await client.get_message("@audio_storm_bot", limit=1)
+        while 'Пожалуйста, подождите, идёт подготовка..' in mm[0].text:
+          mm = await client.get_message("@audio_storm_bot", limit=1)
+        r = mm[0]
+        
+        assert "Извините, по данному запросу не найдено аудиозаписей" not in r.text
 
         await r.click(0)
         await r.delete()
