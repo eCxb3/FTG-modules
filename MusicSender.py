@@ -8,6 +8,7 @@ from telethon.tl.types import (
     Channel,
     InputPeerNotifySettings
 )
+from typing import Any, List, Optional, Tuple, Union
 
 @loader.tds
 class MusicSendMod(loader.Module):
