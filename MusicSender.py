@@ -8,10 +8,41 @@ class MusicSendMod(loader.Module):
   """Отправляет песню"""
   strings = {"name": "MusicSender"}
   
+  async def dnd(
+    client: "TelegramClient",  # type: ignore
+    peer: Entity,
+    archive: Optional[bool] = True,
+  ) -> bool:
+    """
+    Mutes and optionally archives peer
+    :param peer: Anything entity-link
+    :param archive: Archive peer, or just mute?
+    :returns: `True` on success, otherwise `False`
+    """
+    try:
+        await client(
+            UpdateNotifySettingsRequest(
+                peer=peer,
+                settings=InputPeerNotifySettings(
+                    show_previews=False,
+                    silent=True,
+                    mute_until=2**31 - 1,
+                ),
+            )
+        )
+
+        if archive:
+            await client.edit_folder(peer, 1)
+    except Exception:
+        logging.exception("utils.dnd error")
+        return False
+
+    return True
+  
   async def client_ready(self, client, db):
     self._db = db
     self._client = client
-    await utils.dnd(client, "@audio_storm_bot", archive=True)
+    await dnd(client, "@audio_storm_bot", archive=True)
   
   async def msendcmd(self, message: Message):
     """Отправить песнб по названию. Использование msend <название песни>"""
