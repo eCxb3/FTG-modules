@@ -2,6 +2,12 @@
 
 from .. import loader, utils
 from telethon.tl.types import Message
+from telethon.hints import Entity
+from telethon.tl.functions.account import UpdateNotifySettingsRequest
+from telethon.tl.types import (
+    Channel,
+    InputPeerNotifySettings
+)
 
 @loader.tds
 class MusicSendMod(loader.Module):
@@ -34,7 +40,6 @@ class MusicSendMod(loader.Module):
         if archive:
             await client.edit_folder(peer, 1)
     except Exception:
-        logging.exception("utils.dnd error")
         return False
 
     return True
