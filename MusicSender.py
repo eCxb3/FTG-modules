@@ -14,6 +14,7 @@ class MusicSendMod(loader.Module):
   
   async def msendcmd(self, message: Message):
     """Отправить песню по названию. Использование msend <название песни>"""
+    local_id = message.chat.id
     args = utils.get_args_raw(message)
     if not args:
       return await message.edit('❌ Нет аргумента')
@@ -36,7 +37,7 @@ class MusicSendMod(loader.Module):
 
         assert r.document
 
-        await self._client.send_file(message.chat.id, r.document)
+        await self._client.send_file(local_id, r.document)
         await message.delete()
       except Exception:
         await message.edit(f'❌ Песня: «{args}» не найдена')
