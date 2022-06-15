@@ -14,7 +14,8 @@ class MusicSendMod(loader.Module):
   
   async def msendcmd(self, message: Message):
     """Отправить песню по названию. Использование msend <название песни>"""
-    local_id = message.chat.id
+    await message.reply(message)
+    #local_id = message.chat.id
     args = utils.get_args_raw(message)
     if not args:
       return await message.edit('❌ Нет аргумента')
