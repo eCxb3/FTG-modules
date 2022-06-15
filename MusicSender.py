@@ -2,53 +2,15 @@
 
 from .. import loader, utils
 from telethon.tl.types import Message
-from telethon.hints import Entity
-from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from telethon.tl.types import (
-    Channel,
-    InputPeerNotifySettings
-)
-from typing import Any, List, Optional, Tuple, Union
 
 @loader.tds
 class MusicSendMod(loader.Module):
   """Отправляет песню"""
   strings = {"name": "MusicSender"}
   
-  async def dnd(
-    client: "TelegramClient",  # type: ignore
-    peer: Entity,
-    archive: Optional[bool] = True,
-  ) -> bool:
-    """
-    Mutes and optionally archives peer
-    :param peer: Anything entity-link
-    :param archive: Archive peer, or just mute?
-    :returns: `True` on success, otherwise `False`
-    """
-    try:
-        await client(
-            UpdateNotifySettingsRequest(
-                peer=peer,
-                settings=InputPeerNotifySettings(
-                    show_previews=False,
-                    silent=True,
-                    mute_until=2**31 - 1,
-                ),
-            )
-        )
-
-        if archive:
-            await client.edit_folder(peer, 1)
-    except Exception:
-        return False
-
-    return True
-  
   async def client_ready(self, client, db):
     self._db = db
     self._client = client
-    await dnd(client, "@audio_storm_bot", archive=True)
   
   async def msendcmd(self, message: Message):
     """Отправить песнб по названию. Использование msend <название песни>"""
