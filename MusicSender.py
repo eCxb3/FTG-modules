@@ -1,6 +1,7 @@
 # meta developer: @ecXbe
 
 from .. import loader, utils
+from telethon.tl.types import Message
 
 @loader.tds
 class MusicSendMod(loader.Module):
@@ -11,10 +12,8 @@ class MusicSendMod(loader.Module):
     self._db = db
     self._client = client
   
-  async def msendcmd(self, message: types.Message):
+  async def msendcmd(self, message: Message):
     """Отправить песню по названию. Использование msend <название песни>"""
-    await message.reply(message)
-    #local_id = message.chat.id
     args = utils.get_args_raw(message)
     if not args:
       return await message.edit('❌ Нет аргумента')
@@ -37,7 +36,7 @@ class MusicSendMod(loader.Module):
 
         assert r.document
 
-        await self._client.send_file(local_id, r.document)
+        await self._client.send_file(message.peer_id, r.document)
         await message.delete()
       except Exception:
         await message.edit(f'❌ Песня: «{args}» не найдена')
