@@ -1,7 +1,6 @@
 # meta developer: @ecXbe
 
 from .. import loader, utils
-from telethon.tl.types import Message
 
 @loader.tds
 class MusicSendMod(loader.Module):
@@ -12,7 +11,7 @@ class MusicSendMod(loader.Module):
     self._db = db
     self._client = client
   
-  async def msendcmd(self, message: Message):
+  async def msendcmd(self, message: types.Message):
     """Отправить песню по названию. Использование msend <название песни>"""
     await message.reply(message)
     #local_id = message.chat.id
