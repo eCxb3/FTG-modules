@@ -24,7 +24,7 @@ class SingletimerMod(loader.Module):
     return await message.edit('Таймер одиночества выключен')
   
   async def watcher(self, message):
-    if db.get('SingleTimer', 'status') == True:
+    if self.db.get('SingleTimer', 'status') == True:
       if message.is_private:
         end_time = time.time() - self.start_time
         return await message.reply(f'Пользователю не писали {end_time} секунд')
