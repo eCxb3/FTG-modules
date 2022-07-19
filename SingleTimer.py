@@ -8,7 +8,9 @@ class SingletimerMod(loader.Module):
     
   async def client_ready(self, client, db):
     self.db = db
-    if db.get('SingleTimer', 'status') == True: return self.start_time = time.time()
+    if db.get('SingleTimer', 'status') == True: 
+      self.start_time = time.time()
+      return 
     
   async def stimercmd(self, message):
     """Врубить / вырубить таймер"""
