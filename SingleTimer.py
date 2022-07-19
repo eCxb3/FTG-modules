@@ -8,6 +8,7 @@ class SingletimerMod(loader.Module):
     
   async def client_ready(self, client, db):
     self.db = db
+    self.client = client
     if db.get('SingleTimer', 'status') == True: 
       self.start_time = time.time()
       return 
@@ -26,7 +27,7 @@ class SingletimerMod(loader.Module):
   async def watcher(self, message):
     if self.db.get('SingleTimer', 'status') == True:
       if message.is_private:
-        me = await client.get_me()
+        me = await self.client.get_me()
         if message.sender_id != me.id:
           end_time = time.time() - self.start_time
           await message.reply(f'Пользователю не писали {end_time} секунд')
