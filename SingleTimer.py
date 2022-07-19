@@ -30,6 +30,6 @@ class SingletimerMod(loader.Module):
         me = await self.client.get_me()
         if message.sender_id != me.id:
           end_time = time.time() - self.start_time
-          await message.reply(f'Пользователю не писали {end_time} секунд')
+          await message.reply(f'Пользователю @{me.username} не писали {end_time} секунд')
           self.start_time = time.time()
           return
