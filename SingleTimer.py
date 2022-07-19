@@ -16,7 +16,8 @@ class SingletimerMod(loader.Module):
     if status == False:
       self.db.set('SingleTimer', 'status', True)
       await message.edit('Таймер одиночества включен')
-      return self.start_time = time.time()
+      self.start_time = time.time()
+      return
     self.db.set('SingleTimer', 'status', False)
     return await message.edit('Таймер одиночества выключен')
   
