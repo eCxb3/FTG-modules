@@ -12,7 +12,7 @@ class MusecsendMod(loader.Module):
     
     
   async def watcher(self, message: Message):
-    if message.from_id == '5552353032':
+    if message.from_id == 5552353032:
       assert message.document
       await self._client.send_file(
         1632497562,
