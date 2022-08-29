@@ -11,6 +11,7 @@ class MusicsendMod(loader.Module):
     self._client = client
 
   async def watcher(self, message: Message):
+    assert message.from_id
     if message.from_id == 5552353032:
       assert message.document
       await self._client.send_file(
