@@ -1,7 +1,8 @@
+# meta developer: @ecXbe
+
 from .. import loader, utils
-from telethon.tl.types 
-from random import choice
-import Message 
+from telethon.tl.types import Message
+from random import choice 
 
 @loader.tds
 class ChallengeMod(loader.Module):
