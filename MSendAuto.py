@@ -13,10 +13,10 @@ class MusicsendMod(loader.Module):
   async def watcher(self, message: Message):
     try:
       assert message.from_id
-      if message.from_id == 1792795014:
+      if message.from_id == 5552353032:
         assert message.document
         await self._client.send_file(
-          1632497562,
+          1792795014,
           message,
           caption=f'<a href="{message.entities[0].url}">song.link</a> | <a href="{message.entities[3].url}">via</a>',
           parse_mode='HTML',
