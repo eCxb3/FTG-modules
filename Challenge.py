@@ -6,7 +6,7 @@ from random import choice
 
 @loader.tds
 class ChallengeMod(loader.Module):
-  """Отправляет испытание. Ввбирает рандонмное исрюпытание из списка, отправляет его и сразу удаляет только для вас."""
+  """Отправляет испытание. Выбирает рандомное испытание из списка, отправляет его и сразу удаляет только для вас."""
   strings = {"name": "ChallengeSend"}
   
   async def client_ready(self, client, db):
@@ -14,7 +14,10 @@ class ChallengeMod(loader.Module):
     self._client = client
 
   async def chsendcmd(self, message: Message):
-    """-chsend 1 испытание ^^ 2 испытание ^^ ... ^^ n испытание"""
+    """
+    -chsend 1 испытание ^^ 2 испытание ^^ ... ^^ n испытание
+    Пример: -chsend Я люблю тебя ^^ Давай встретимся?
+    """
     await message.delete()
     args = utils.get_args_raw(message)
     if not args:
