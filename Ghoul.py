@@ -1,3 +1,5 @@
+#meta developer: @ecXbe
+
 from asyncio import sleep
 from .. import loader, utils
 from telethon.tl.types import Message
